@@ -1,0 +1,22 @@
+{
+    "name": "borgou/taobao-sdk",
+    "description": "TaoBao-sdk-PHP-auto_1447355351010-20151124",
+    "keywords": ["taobao", "api", "top", "sdk"],
+    "authors": [
+        {
+            "name": "borg.ou",
+            "email": "borgou@163.com"
+        }
+    ],
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">= 5.2.0",
+        "ext-curl": "*"
+    },
+    "autoload": {
+        "files": [
+            "TopSdk.php"
+        ]
+    }
+}
