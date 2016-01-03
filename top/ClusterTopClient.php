@@ -37,7 +37,9 @@ class ClusterTopClient extends TopClient {
 		$bestUrl = $this->getBestVipUrl($this->gatewayUrl,$request->getApiMethodName(),$session);
 		if($currentDate - ClusterTopClient::$syncDate > $syncDuration * 60){
 			$httpdns = new HttpdnsGetRequest;
-			ClusterTopClient::$dnsconfig = json_decode(parent::execute($httpdns,null,$bestUrl)->result);
+			var_dump(parent::execute($httpdns,null,$bestUrl));
+			return 0;
+			ClusterTopClient::$dnsconfig = json_decode(parent::execute($httpdns,null,$bestUrl)->result,true);
 			$syncDate = date('U');
 			ClusterTopClient::$syncDate = $syncDate ;
 		}

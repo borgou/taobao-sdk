@@ -8,6 +8,11 @@ class BizResult
 {
 	
 	/** 
+	 * 错误码
+	 **/
+	public $err_code;
+	
+	/** 
 	 * 返回结果
 	 **/
 	public $model;
