@@ -18,7 +18,7 @@ class AlibabaAliqinFcSmsNumQueryRequest
 	private $currentPage;
 	
 	/** 
-	 * 分页参数，每页数量。最大值100
+	 * 分页参数，每页数量。最大值50
 	 **/
 	private $pageSize;
 	

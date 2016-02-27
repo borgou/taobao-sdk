@@ -12,38 +12,38 @@ class Autoloader{
         if(false !== strpos($name,'\\')){
           $name = strstr($class, '\\', true);
         }
-
-        $filename = __DIR__."/top/".$name.".php";
+        
+        $filename = TOP_AUTOLOADER_PATH."/top/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
         }
 
-        $filename = __DIR__."/top/request/".$name.".php";
+        $filename = TOP_AUTOLOADER_PATH."/top/request/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
         }
 
-        $filename = __DIR__."/top/domain/".$name.".php";
+        $filename = TOP_AUTOLOADER_PATH."/top/domain/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
         }
 
-        $filename = __DIR__."/aliyun/".$name.".php";
+        $filename = TOP_AUTOLOADER_PATH."/aliyun/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
         }
 
-        $filename = __DIR__."/aliyun/request/".$name.".php";
+        $filename = TOP_AUTOLOADER_PATH."/aliyun/request/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
         }
 
-        $filename = __DIR__."/aliyun/domain/".$name.".php";
+        $filename = TOP_AUTOLOADER_PATH."/aliyun/domain/".$name.".php";
         if(is_file($filename)) {
             include $filename;
             return;
