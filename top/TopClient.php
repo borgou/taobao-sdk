@@ -205,7 +205,7 @@ class TopClient
 		$respWellFormed = false;
 		if ("json" == $this->format)
 		{
-			$respObject = json_decode($resp,true);
+			$respObject = json_decode($resp);
 			if (null !== $respObject)
 			{
 				$respWellFormed = true;
