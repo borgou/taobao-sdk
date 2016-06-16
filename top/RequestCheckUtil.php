@@ -95,7 +95,9 @@ class RequestCheckUtil
 			return true ;
 		if($value === null )
 			return true;
-		if(trim($value) === "")
+		if(is_array($value) && count($value) == 0)
+			return true;
+		if(is_string($value) &&trim($value) === "")
 			return true;
 		
 		return false;

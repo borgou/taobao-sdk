@@ -34,7 +34,7 @@ class TopClient
 		$stringToBeSigned = $this->secretKey;
 		foreach ($params as $k => $v)
 		{
-			if("@" != substr($v, 0, 1))
+			if(is_string($v) && "@" != substr($v, 0, 1))
 			{
 				$stringToBeSigned .= "$k$v";
 			}
@@ -70,6 +70,9 @@ class TopClient
 			$postMultipart = false;
 			foreach ($postFields as $k => $v)
 			{
+				if(!is_string($v))
+					continue ;
+
 				if("@" != substr($v, 0, 1))//判断是不是文件上传
 				{
 					$postBodyString .= "$k=" . urlencode($v) . "&"; 
@@ -104,6 +107,78 @@ class TopClient
 		}
 		$reponse = curl_exec($ch);
 		
+		if (curl_errno($ch))
+		{
+			throw new Exception(curl_error($ch),0);
+		}
+		else
+		{
+			$httpStatusCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+			if (200 !== $httpStatusCode)
+			{
+				throw new Exception($reponse,$httpStatusCode);
+			}
+		}
+		curl_close($ch);
+		return $reponse;
+	}
+	public function curl_with_memory_file($url, $postFields = null, $fileFields = null)
+	{
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_FAILONERROR, false);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		if ($this->readTimeout) {
+			curl_setopt($ch, CURLOPT_TIMEOUT, $this->readTimeout);
+		}
+		if ($this->connectTimeout) {
+			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
+		}
+		curl_setopt ( $ch, CURLOPT_USERAGENT, "top-sdk-php" );
+		//https 请求
+		if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+		}
+		//生成分隔符
+		$delimiter = '-------------' . uniqid();
+		//先将post的普通数据生成主体字符串
+		$data = '';
+		if($postFields != null){
+			foreach ($postFields as $name => $content) {
+			    $data .= "--" . $delimiter . "\r\n";
+			    $data .= 'Content-Disposition: form-data; name="' . $name . '"';
+			    //multipart/form-data 不需要urlencode，参见 http:stackoverflow.com/questions/6603928/should-i-url-encode-post-data
+			    $data .= "\r\n\r\n" . $content . "\r\n";
+			}
+			unset($name,$content);
+		}
+
+		//将上传的文件生成主体字符串
+		if($fileFields != null){
+			foreach ($fileFields as $name => $file) {
+			    $data .= "--" . $delimiter . "\r\n";
+			    $data .= 'Content-Disposition: form-data; name="' . $name . '"; filename="' . $file['name'] . "\" \r\n";
+			    $data .= 'Content-Type: ' . $file['type'] . "\r\n\r\n";//多了个文档类型
+
+			    $data .= $file['content'] . "\r\n";
+			}
+			unset($name,$file);
+		}
+		//主体结束的分隔符
+		$data .= "--" . $delimiter . "--";
+
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_HTTPHEADER , array(
+		    'Content-Type: multipart/form-data; boundary=' . $delimiter,
+		    'Content-Length: ' . strlen($data))
+		); 
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+		$reponse = curl_exec($ch);
+		unset($data);
+
 		if (curl_errno($ch))
 		{
 			throw new Exception(curl_error($ch),0);
@@ -164,7 +239,7 @@ class TopClient
 		{
 			$sysParams["session"] = $session;
 		}
-
+		$apiParams = array();
 		//获取业务参数
 		$apiParams = $request->getApiParas();
 
@@ -185,13 +260,27 @@ class TopClient
 			// if(strcmp($sysParamKey,"timestamp") != 0)
 			$requestUrl .= "$sysParamKey=" . urlencode($sysParamValue) . "&";
 		}
+
+		$fileFields = array();
+		foreach ($apiParams as $key => $value) {
+			if(is_array($value) && array_key_exists('type',$value) && array_key_exists('content',$value) ){
+				$value['name'] = $key;
+				$fileFields[$key] = $value;
+				unset($apiParams[$key]);
+			}
+		}
+
 		// $requestUrl .= "timestamp=" . urlencode($sysParams["timestamp"]) . "&";
 		$requestUrl = substr($requestUrl, 0, -1);
 
 		//发起HTTP请求
 		try
 		{
-			$resp = $this->curl($requestUrl, $apiParams);
+			if(count($fileFields) > 0){
+				$resp = $this->curl_with_memory_file($requestUrl, $apiParams, $fileFields);
+			}else{
+				$resp = $this->curl($requestUrl, $apiParams);
+			}
 		}
 		catch (Exception $e)
 		{
@@ -201,6 +290,8 @@ class TopClient
 			return $result;
 		}
 
+		unset($apiParams);
+		unset($fileFields);
 		//解析TOP返回结果
 		$respWellFormed = false;
 		if ("json" == $this->format)

@@ -3,7 +3,7 @@
  * TOP API: alibaba.aliqin.fc.voice.num.doublecall request
  * 
  * @author auto create
- * @since 1.0, 2015.11.27
+ * @since 1.0, 2016.03.06
  */
 class AlibabaAliqinFcVoiceNumDoublecallRequest
 {
