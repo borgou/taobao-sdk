@@ -83,7 +83,7 @@ class AeopAeProduct
 	public $detail;
 	
 	/** 
-	 * 运费模版ID。通过运费接口listFreightTemplate获取。
+	 * 商品关联的运费模板ID
 	 **/
 	public $freight_template_id;
 	
@@ -126,6 +126,11 @@ class AeopAeProduct
 	 * mobile Detail详情。以下内容会被过滤，但不影响产品提交:(1)含有script\textarea\style\iframe\frame\input\pre\button均被过滤.(2)a标签href属性只允许是aliexpress.com域名连接,否则被过滤.(3)img标签src只允许alibaba.com或者aliimg.com域名链接.(4)任意具有style属性的html标签，其style受检查，只允许一般简单的样式.不允许的内容将被过滤.(5)如果发现html内容标签缺失，会自动补全标签.
 	 **/
 	public $mobile_detail;
+	
+	/** 
+	 * 模特尺码数据，最多5个，单位厘米
+	 **/
+	public $mode_size_chart_list;
 	
 	/** 
 	 * 商品拥有者的login_id

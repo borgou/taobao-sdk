@@ -203,6 +203,11 @@ class AeopTpOrderDetailDto
 	public $seller_operator_login_id;
 	
 	/** 
+	 * 新订单金额，比order_amount更准确，考虑了卖家调价及COD费用。仅限于新订单（7.18-7.31期间创建的部分订单及8.1以后创建的所有订单）。含税价订单，不含税金
+	 **/
+	public $seller_order_amount;
+	
+	/** 
 	 * 卖家名称
 	 **/
 	public $seller_signer_fullname;

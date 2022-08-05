@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editsingleskuprice request
  * 
  * @author auto create
- * @since 1.0, 2020.11.20
+ * @since 1.0, 2021.04.20
  */
 class AliexpressPostproductRedefiningEditsingleskupriceRequest
 {
@@ -11,6 +11,11 @@ class AliexpressPostproductRedefiningEditsingleskupriceRequest
 	 * 需修改编辑的商品ID
 	 **/
 	private $productId;
+	
+	/** 
+	 * 修改编辑后的商品促销价格
+	 **/
+	private $salePrice;
 	
 	/** 
 	 * 需修改编辑的商品单个SKUID。SKU ID可以通过api.findAeProductById接口中的aeopAeproductSKUs获取单个产品信息中"id"进行获取。 没有SKU属性的商品SKUID回传“<none>”
@@ -33,6 +38,17 @@ class AliexpressPostproductRedefiningEditsingleskupriceRequest
 	public function getProductId()
 	{
 		return $this->productId;
+	}
+
+	public function setSalePrice($salePrice)
+	{
+		$this->salePrice = $salePrice;
+		$this->apiParas["sale_price"] = $salePrice;
+	}
+
+	public function getSalePrice()
+	{
+		return $this->salePrice;
 	}
 
 	public function setSkuId($skuId)

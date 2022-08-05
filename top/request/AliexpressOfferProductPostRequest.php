@@ -3,7 +3,7 @@
  * TOP API: aliexpress.offer.product.post request
  * 
  * @author auto create
- * @since 1.0, 2020.01.03
+ * @since 1.0, 2022.01.26
  */
 class AliexpressOfferProductPostRequest
 {
@@ -11,6 +11,11 @@ class AliexpressOfferProductPostRequest
 	 * 待发布商品数据
 	 **/
 	private $aeopAEProduct;
+	
+	/** 
+	 * 扩展参数 json格式 custom_image 分国家主图 vat_tags 含税标
+	 **/
+	private $extParam;
 	
 	private $apiParas = array();
 	
@@ -23,6 +28,17 @@ class AliexpressOfferProductPostRequest
 	public function getAeopAEProduct()
 	{
 		return $this->aeopAEProduct;
+	}
+
+	public function setExtParam($extParam)
+	{
+		$this->extParam = $extParam;
+		$this->apiParas["ext_param"] = $extParam;
+	}
+
+	public function getExtParam()
+	{
+		return $this->extParam;
 	}
 
 	public function getApiMethodName()

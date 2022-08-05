@@ -1,24 +1,24 @@
 <?php
 
 /**
- * 查询条件
+ * 12345
  * @author auto create
  */
 class TpOpenSingleOrderQuery
 {
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 买家ID
 	 **/
 	public $buyer_aliid;
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 12345
 	 **/
 	public $ext_info_bit_flag;
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 12345
 	 **/
 	public $field_list;
 	
@@ -28,17 +28,17 @@ class TpOpenSingleOrderQuery
 	public $order_id;
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 12345
 	 **/
 	public $seller_aliid;
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 12345
 	 **/
 	public $seller_operator_aliid;
 	
 	/** 
-	 * 无效，请不要设置任何值
+	 * 12345
 	 **/
 	public $show_id;	
 }

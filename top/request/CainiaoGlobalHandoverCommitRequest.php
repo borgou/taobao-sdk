@@ -3,14 +3,39 @@
  * TOP API: cainiao.global.handover.commit request
  * 
  * @author auto create
- * @since 1.0, 2020.07.22
+ * @since 1.0, 2022.06.06
  */
 class CainiaoGlobalHandoverCommitRequest
 {
 	/** 
+	 * 预约交货方式（bigbag_appointment：大包预约，batch_appointment：批次预约））
+	 **/
+	private $appointmentType;
+	
+	/** 
 	 * ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
 	 **/
 	private $client;
+	
+	/** 
+	 * 国内物流公司名称（交接单类型type为self_post(自寄)时必填）
+	 **/
+	private $domesticLogisticsCompany;
+	
+	/** 
+	 * 国内物流公司id（交接单类型type为self_post(自寄)时必填）
+	 **/
+	private $domesticLogisticsCompanyId;
+	
+	/** 
+	 * 国内运单号（交接单类型type为self_post(自寄)时必填）
+	 **/
+	private $domesticTrackingNo;
+	
+	/** 
+	 * 扩展字段
+	 **/
+	private $features;
 	
 	/** 
 	 * 交接单id
@@ -43,7 +68,7 @@ class CainiaoGlobalHandoverCommitRequest
 	private $returnInfo;
 	
 	/** 
-	 * 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)
+	 * 交接单类型：cainiao_pickup(菜鸟揽收)、self_post(自寄)、self_send(自送)
 	 **/
 	private $type;
 	
@@ -64,6 +89,17 @@ class CainiaoGlobalHandoverCommitRequest
 	
 	private $apiParas = array();
 	
+	public function setAppointmentType($appointmentType)
+	{
+		$this->appointmentType = $appointmentType;
+		$this->apiParas["appointment_type"] = $appointmentType;
+	}
+
+	public function getAppointmentType()
+	{
+		return $this->appointmentType;
+	}
+
 	public function setClient($client)
 	{
 		$this->client = $client;
@@ -73,6 +109,50 @@ class CainiaoGlobalHandoverCommitRequest
 	public function getClient()
 	{
 		return $this->client;
+	}
+
+	public function setDomesticLogisticsCompany($domesticLogisticsCompany)
+	{
+		$this->domesticLogisticsCompany = $domesticLogisticsCompany;
+		$this->apiParas["domestic_logistics_company"] = $domesticLogisticsCompany;
+	}
+
+	public function getDomesticLogisticsCompany()
+	{
+		return $this->domesticLogisticsCompany;
+	}
+
+	public function setDomesticLogisticsCompanyId($domesticLogisticsCompanyId)
+	{
+		$this->domesticLogisticsCompanyId = $domesticLogisticsCompanyId;
+		$this->apiParas["domestic_logistics_company_id"] = $domesticLogisticsCompanyId;
+	}
+
+	public function getDomesticLogisticsCompanyId()
+	{
+		return $this->domesticLogisticsCompanyId;
+	}
+
+	public function setDomesticTrackingNo($domesticTrackingNo)
+	{
+		$this->domesticTrackingNo = $domesticTrackingNo;
+		$this->apiParas["domestic_tracking_no"] = $domesticTrackingNo;
+	}
+
+	public function getDomesticTrackingNo()
+	{
+		return $this->domesticTrackingNo;
+	}
+
+	public function setFeatures($features)
+	{
+		$this->features = $features;
+		$this->apiParas["features"] = $features;
+	}
+
+	public function getFeatures()
+	{
+		return $this->features;
 	}
 
 	public function setHandoverOrderId($handoverOrderId)

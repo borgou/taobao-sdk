@@ -3,7 +3,7 @@
  * TOP API: aliexpress.offer.redefining.getcanusedproductbysizetemplateid request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2022.07.27
  */
 class AliexpressOfferRedefiningGetcanusedproductbysizetemplateidRequest
 {

@@ -1,7 +1,9 @@
 <?php
-
 /**
- * Class AliexpressMarketingStorepromotionsQuerybyproductRequest
+ * TOP API: aliexpress.marketing.storepromotions.querybyproduct request
+ * 
+ * @author auto create
+ * @since 1.0, 2019.07.08
  */
 class AliexpressMarketingStorepromotionsQuerybyproductRequest
 {

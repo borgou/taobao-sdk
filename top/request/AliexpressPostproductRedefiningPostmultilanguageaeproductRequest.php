@@ -3,10 +3,15 @@
  * TOP API: aliexpress.postproduct.redefining.postmultilanguageaeproduct request
  * 
  * @author auto create
- * @since 1.0, 2020.01.03
+ * @since 1.0, 2021.10.14
  */
 class AliexpressPostproductRedefiningPostmultilanguageaeproductRequest
 {
+	/** 
+	 * 扩展参数字段 json custom_image 分国家主图  vat_tags 含税标
+	 **/
+	private $extParam;
+	
 	/** 
 	 * 产品信息
 	 **/
@@ -14,6 +19,17 @@ class AliexpressPostproductRedefiningPostmultilanguageaeproductRequest
 	
 	private $apiParas = array();
 	
+	public function setExtParam($extParam)
+	{
+		$this->extParam = $extParam;
+		$this->apiParas["ext_param"] = $extParam;
+	}
+
+	public function getExtParam()
+	{
+		return $this->extParam;
+	}
+
 	public function setProduct($product)
 	{
 		$this->product = $product;

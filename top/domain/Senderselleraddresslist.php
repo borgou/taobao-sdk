@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 12345
+ * senderSellerAddressList
  * @author auto create
  */
 class Senderselleraddresslist

@@ -3,7 +3,7 @@
  * TOP API: aliexpress.category.redefining.getallchildattributesresult request
  * 
  * @author auto create
- * @since 1.0, 2019.12.26
+ * @since 1.0, 2021.10.09
  */
 class AliexpressCategoryRedefiningGetallchildattributesresultRequest
 {

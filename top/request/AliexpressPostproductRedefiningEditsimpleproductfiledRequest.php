@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editsimpleproductfiled request
  * 
  * @author auto create
- * @since 1.0, 2020.11.11
+ * @since 1.0, 2021.10.13
  */
 class AliexpressPostproductRedefiningEditsimpleproductfiledRequest
 {
@@ -13,7 +13,7 @@ class AliexpressPostproductRedefiningEditsimpleproductfiledRequest
 	private $fiedName;
 	
 	/** 
-	 * 根据fiedName变化：fiedName=detail时，本字段是一段html字符串；fiedName=mobileDetail时，本字段的值是一段json字符串；fiedName=groupId时，本字段是一个产品分组唯一标识（数字类型）。
+	 * 根据fiedName变化：fiedName=detail时，本字段是一段html字符串；fiedName=mobileDetail时，本字段的值是一段json字符串；fiedName=groupId时，本字段是一个产品分组唯一标识（数字类型），服务模版传参数是[1005003352630153,1005003352630154],fiedName= custom_image分国家主图变更传参{"BR":"https://ae04.alicdn.com/kf/HTB1uD3ZXUz1gK0jSZLeq6z9kVXat.jpg","RU":"http://g02.a.alicdn.com/kf/HTB1DkaWJXXXXXb6XFXXq6xXFXXXp.jpg"}。
 	 **/
 	private $fiedvalue;
 	

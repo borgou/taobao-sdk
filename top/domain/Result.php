@@ -1,25 +1,30 @@
 <?php
 
 /**
- * result
+ * 接口返回model
  * @author auto create
  */
 class Result
 {
 	
 	/** 
-	 * companyCode
+	 * 当前页
 	 **/
-	public $company_code;
+	public $current_page;
 	
 	/** 
-	 * companyId
+	 * 结果
 	 **/
-	public $company_id;
+	public $result_list;
 	
 	/** 
-	 * name
+	 * 是否成功
 	 **/
-	public $name;	
+	public $success;
+	
+	/** 
+	 * totalPage
+	 **/
+	public $total_page;	
 }
 ?>

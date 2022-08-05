@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.editproductcidattidsku request
  * 
  * @author auto create
- * @since 1.0, 2020.05.20
+ * @since 1.0, 2021.10.14
  */
 class AliexpressPostproductRedefiningEditproductcidattidskuRequest
 {
@@ -11,6 +11,11 @@ class AliexpressPostproductRedefiningEditproductcidattidskuRequest
 	 * 产品类目ID，如果不想调整类目，则不要填写。
 	 **/
 	private $categoryId;
+	
+	/** 
+	 * 扩展参数 json格式custom_image 分国家主图。 vat_tags 含税标
+	 **/
+	private $extParam;
 	
 	/** 
 	 * 必填，商品id，一次只能上传一个
@@ -38,6 +43,17 @@ class AliexpressPostproductRedefiningEditproductcidattidskuRequest
 	public function getCategoryId()
 	{
 		return $this->categoryId;
+	}
+
+	public function setExtParam($extParam)
+	{
+		$this->extParam = $extParam;
+		$this->apiParas["ext_param"] = $extParam;
+	}
+
+	public function getExtParam()
+	{
+		return $this->extParam;
 	}
 
 	public function setProductId($productId)

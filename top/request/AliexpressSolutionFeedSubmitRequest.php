@@ -3,10 +3,15 @@
  * TOP API: aliexpress.solution.feed.submit request
  * 
  * @author auto create
- * @since 1.0, 2020.12.02
+ * @since 1.0, 2022.01.06
  */
 class AliexpressSolutionFeedSubmitRequest
 {
+	/** 
+	 * More information of the request.
+	 **/
+	private $developerFeatures;
+	
 	/** 
 	 * item list, maximum size: 2000.
 	 **/
@@ -19,6 +24,17 @@ class AliexpressSolutionFeedSubmitRequest
 	
 	private $apiParas = array();
 	
+	public function setDeveloperFeatures($developerFeatures)
+	{
+		$this->developerFeatures = $developerFeatures;
+		$this->apiParas["developer_features"] = $developerFeatures;
+	}
+
+	public function getDeveloperFeatures()
+	{
+		return $this->developerFeatures;
+	}
+
 	public function setItemList($itemList)
 	{
 		$this->itemList = $itemList;

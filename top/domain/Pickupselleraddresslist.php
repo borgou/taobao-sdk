@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 12345
+ * pickupSellerAddressList
  * @author auto create
  */
 class Pickupselleraddresslist

@@ -17,3 +17,4 @@ class AeopProductDiscountInfo
 	 **/
 	public $terminal;	
 }
+?>

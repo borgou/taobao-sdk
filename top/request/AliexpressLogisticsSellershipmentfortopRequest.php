@@ -3,14 +3,29 @@
  * TOP API: aliexpress.logistics.sellershipmentfortop request
  * 
  * @author auto create
- * @since 1.0, 2020.05.27
+ * @since 1.0, 2022.01.04
  */
 class AliexpressLogisticsSellershipmentfortopRequest
 {
 	/** 
+	 * 实际承运商
+	 **/
+	private $actualCarrier;
+	
+	/** 
 	 * memo
 	 **/
 	private $description;
+	
+	/** 
+	 * ioss税号
+	 **/
+	private $ioss;
+	
+	/** 
+	 * 多语言，es_ES西班牙语， pt_BR巴西
+	 **/
+	private $locale;
 	
 	/** 
 	 * 国际运单号
@@ -44,6 +59,17 @@ class AliexpressLogisticsSellershipmentfortopRequest
 	
 	private $apiParas = array();
 	
+	public function setActualCarrier($actualCarrier)
+	{
+		$this->actualCarrier = $actualCarrier;
+		$this->apiParas["actual_carrier"] = $actualCarrier;
+	}
+
+	public function getActualCarrier()
+	{
+		return $this->actualCarrier;
+	}
+
 	public function setDescription($description)
 	{
 		$this->description = $description;
@@ -53,6 +79,28 @@ class AliexpressLogisticsSellershipmentfortopRequest
 	public function getDescription()
 	{
 		return $this->description;
+	}
+
+	public function setIoss($ioss)
+	{
+		$this->ioss = $ioss;
+		$this->apiParas["ioss"] = $ioss;
+	}
+
+	public function getIoss()
+	{
+		return $this->ioss;
+	}
+
+	public function setLocale($locale)
+	{
+		$this->locale = $locale;
+		$this->apiParas["locale"] = $locale;
+	}
+
+	public function getLocale()
+	{
+		return $this->locale;
 	}
 
 	public function setLogisticsNo($logisticsNo)

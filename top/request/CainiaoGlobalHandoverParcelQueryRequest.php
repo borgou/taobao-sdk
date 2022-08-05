@@ -3,7 +3,7 @@
  * TOP API: cainiao.global.handover.parcel.query request
  * 
  * @author auto create
- * @since 1.0, 2020.10.12
+ * @since 1.0, 2021.11.24
  */
 class CainiaoGlobalHandoverParcelQueryRequest
 {

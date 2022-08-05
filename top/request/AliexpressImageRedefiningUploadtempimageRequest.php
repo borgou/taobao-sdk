@@ -41,8 +41,8 @@ class AliexpressImageRedefiningUploadtempimageRequest
 		return $this->srcFileName;
 	}
 
-	public function getApiMethodName(): string
-    {
+	public function getApiMethodName()
+	{
 		return "aliexpress.image.redefining.uploadtempimage";
 	}
 	

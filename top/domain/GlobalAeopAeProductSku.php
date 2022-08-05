@@ -23,6 +23,11 @@ class GlobalAeopAeProductSku
 	public $currency_code;
 	
 	/** 
+	 * EAN, or EAN13, stands for International Article Number (originally European Article Number). It is an extension of the UPC codes and you'll find them as barcodes on most everyday products. Sometimes the barcode is also called GTIN or GTIN13 (Global Trade Identifier)
+	 **/
+	public $ean_code;
+	
+	/** 
 	 * SKU ID. Can uniquely represent a SKU within a product range.
 	 **/
 	public $id;

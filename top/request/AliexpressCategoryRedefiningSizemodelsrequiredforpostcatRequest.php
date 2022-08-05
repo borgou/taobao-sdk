@@ -3,7 +3,7 @@
  * TOP API: aliexpress.category.redefining.sizemodelsrequiredforpostcat request
  * 
  * @author auto create
- * @since 1.0, 2018.07.25
+ * @since 1.0, 2021.04.14
  */
 class AliexpressCategoryRedefiningSizemodelsrequiredforpostcatRequest
 {

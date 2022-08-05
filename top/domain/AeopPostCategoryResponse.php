@@ -1,14 +1,14 @@
 <?php
 
 /**
- * 发布类目对象
+ * 孩子发布类目对象
  * @author auto create
  */
 class AeopPostCategoryResponse
 {
 	
 	/** 
-	 * 发布类目
+	 * 孩子发布类目
 	 **/
 	public $aeop_post_category_list;
 	

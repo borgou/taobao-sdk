@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.findaeproductbyid request
  * 
  * @author auto create
- * @since 1.0, 2020.11.05
+ * @since 1.0, 2022.02.08
  */
 class AliexpressPostproductRedefiningFindaeproductbyidRequest
 {

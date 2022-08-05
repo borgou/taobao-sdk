@@ -3,7 +3,7 @@
  * TOP API: aliexpress.category.redefining.getchildrenpostcategorybyid request
  * 
  * @author auto create
- * @since 1.0, 2020.03.04
+ * @since 1.0, 2021.05.10
  */
 class AliexpressCategoryRedefiningGetchildrenpostcategorybyidRequest
 {

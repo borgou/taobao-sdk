@@ -58,6 +58,11 @@ class OrderAddressDto
 	public $fax_number;
 	
 	/** 
+	 * localized address, currently for buyer whose address is in Russia.
+	 **/
+	public $localized_address;
+	
+	/** 
 	 * mobile number
 	 **/
 	public $mobile_no;

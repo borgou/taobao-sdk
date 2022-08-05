@@ -13,6 +13,11 @@ class AeopTpChildOrderDto
 	public $afflicate_fee_rate;
 	
 	/** 
+	 * U_TAXED海外仓已税，跨境已税是I_TAXED
+	 **/
+	public $already_taxed;
+	
+	/** 
 	 * 买家备注(子订单级别)
 	 **/
 	public $buyer_memo;
@@ -31,6 +36,11 @@ class AeopTpChildOrderDto
 	 * 交易佣金比例
 	 **/
 	public $escrow_fee_rate;
+	
+	/** 
+	 * 存储子订单的拓展参数，是一个map 序列化成Json的
+	 **/
+	public $extend_map;
 	
 	/** 
 	 * 冻结状态（NO_FROZEN:未冻结；IN_FROZEN:冻结中）

@@ -3,7 +3,7 @@
  * TOP API: cainiao.global.logistic.order.create request
  * 
  * @author auto create
- * @since 1.0, 2020.10.09
+ * @since 1.0, 2022.07.27
  */
 class CainiaoGlobalLogisticOrderCreateRequest
 {

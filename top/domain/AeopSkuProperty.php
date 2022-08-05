@@ -8,6 +8,11 @@ class AeopSkuProperty
 {
 	
 	/** 
+	 * sku 套图 3:4 图片
+	 **/
+	public $image_url_list;
+	
+	/** 
 	 * 属性值自定义名称
 	 **/
 	public $property_value_definition_name;

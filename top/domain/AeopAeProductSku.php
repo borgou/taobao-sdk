@@ -23,6 +23,11 @@ class AeopAeProductSku
 	public $currency_code;
 	
 	/** 
+	 * sku维度eanCode
+	 **/
+	public $ean_code;
+	
+	/** 
 	 * SKU id，格式：sku_property_id:sku_property_value_id,不需要变更类目不用传，自定义属性必传
 	 **/
 	public $id;

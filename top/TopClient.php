@@ -1,8 +1,4 @@
 <?php
-
-/**
- * Class TopClient
- */
 class TopClient
 {
 	public $appkey;
@@ -11,7 +7,7 @@ class TopClient
 
 	public $gatewayUrl = "http://gw.api.taobao.com/router/rest";
 
-	public $format = "json";
+	public $format = "xml";
 
 	public $connectTimeout;
 
@@ -58,10 +54,8 @@ class TopClient
 	{
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
-        //curl_setopt($ch, CURLOPT_VERBOSE, true);
 		curl_setopt($ch, CURLOPT_FAILONERROR, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
 		if ($this->readTimeout) {
 			curl_setopt($ch, CURLOPT_TIMEOUT, $this->readTimeout);
 		}
@@ -69,6 +63,7 @@ class TopClient
 			curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $this->connectTimeout);
 		}
 		curl_setopt ( $ch, CURLOPT_USERAGENT, "top-sdk-php" );
+		//https 请求
 		if(strlen($url) > 5 && strtolower(substr($url,0,5)) == "https" ) {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
@@ -107,10 +102,9 @@ class TopClient
 			}
 			else
 			{
-			    $p = substr($postBodyString,0,-1);
 				$header = array("content-type: application/x-www-form-urlencoded; charset=UTF-8");
 				curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, $p);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, substr($postBodyString,0,-1));
 			}
 		}
 		$reponse = curl_exec($ch);
@@ -278,8 +272,10 @@ class TopClient
 			}
 		}
 
+		// $requestUrl .= "timestamp=" . urlencode($sysParams["timestamp"]) . "&";
 		$requestUrl = substr($requestUrl, 0, -1);
 
+		//发起HTTP请求
 		try
 		{
 			if(count($fileFields) > 0){

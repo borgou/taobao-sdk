@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * TOP API: taobao.top.sdk.feedback.upload request
+ * 
+ * @author auto create
+ * @since 1.0, 2016.08.19
+ */
 class TopSdkFeedbackUploadRequest
 {
 	/** 

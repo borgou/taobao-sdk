@@ -3,7 +3,7 @@
  * TOP API: aliexpress.offer.draftproduct.get request
  * 
  * @author auto create
- * @since 1.0, 2019.01.10
+ * @since 1.0, 2021.10.14
  */
 class AliexpressOfferDraftproductGetRequest
 {

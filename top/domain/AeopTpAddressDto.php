@@ -33,6 +33,11 @@ class AeopTpAddressDto
 	public $country;
 	
 	/** 
+	 * 巴西个人税号
+	 **/
+	public $cpf_no;
+	
+	/** 
 	 * 街道详细地址
 	 **/
 	public $detail_address;

@@ -13,6 +13,11 @@ class AeopAttrValueDto
 	public $attributes;
 	
 	/** 
+	 * 属性值下是否有子属性
+	 **/
+	public $has_sub_attr;
+	
+	/** 
 	 * 属性值id
 	 **/
 	public $id;

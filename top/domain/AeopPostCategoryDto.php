@@ -1,19 +1,19 @@
 <?php
 
 /**
- * 发布类目
+ * 孩子发布类目
  * @author auto create
  */
 class AeopPostCategoryDto
 {
 	
 	/** 
-	 * 类目特征的map
+	 * 类目特征map
 	 **/
 	public $features;
 	
 	/** 
-	 * 发布类目id
+	 * 发布类目ID
 	 **/
 	public $id;
 	
@@ -28,7 +28,7 @@ class AeopPostCategoryDto
 	public $level;
 	
 	/** 
-	 * 发布类目多语言名称
+	 * 类目多语言名称
 	 **/
 	public $names;	
 }

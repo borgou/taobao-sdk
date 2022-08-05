@@ -28,6 +28,11 @@ class AeopWlDeclareProductForTopDto
 	public $category_en_desc;
 	
 	/** 
+	 * 交易子单号
+	 **/
+	public $child_order_id;
+	
+	/** 
 	 * 是否包含电池
 	 **/
 	public $contains_battery;

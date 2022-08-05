@@ -3,7 +3,7 @@
  * TOP API: aliexpress.postproduct.redefining.postaeproduct request
  * 
  * @author auto create
- * @since 1.0, 2020.03.26
+ * @since 1.0, 2022.01.26
  */
 class AliexpressPostproductRedefiningPostaeproductRequest
 {
@@ -11,6 +11,11 @@ class AliexpressPostproductRedefiningPostaeproductRequest
 	 * none
 	 **/
 	private $aeopAEProduct;
+	
+	/** 
+	 * 扩展参数 json 格式 custom_image 分国家主图 vat_tags 含税标
+	 **/
+	private $extParam;
 	
 	private $apiParas = array();
 	
@@ -23,6 +28,17 @@ class AliexpressPostproductRedefiningPostaeproductRequest
 	public function getAeopAEProduct()
 	{
 		return $this->aeopAEProduct;
+	}
+
+	public function setExtParam($extParam)
+	{
+		$this->extParam = $extParam;
+		$this->apiParas["ext_param"] = $extParam;
+	}
+
+	public function getExtParam()
+	{
+		return $this->extParam;
 	}
 
 	public function getApiMethodName()

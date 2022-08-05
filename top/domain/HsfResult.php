@@ -1,30 +1,30 @@
 <?php
 
 /**
- * 请求结果
+ * 请求响应
  * @author auto create
  */
 class HsfResult
 {
 	
 	/** 
-	 * 响应数据
+	 * 大包追加详情
 	 **/
 	public $data;
 	
 	/** 
-	 * 异常码
+	 * 错误码
 	 **/
 	public $error_code;
 	
 	/** 
-	 * 错误信息
+	 * 异常描述
 	 **/
 	public $error_msg;
 	
 	/** 
-	 * 请求处理是否成功
+	 * 请求结果
 	 **/
-	public $success;	
+	public $result;	
 }
 ?>

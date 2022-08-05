@@ -1,7 +1,8 @@
 <?php
 
 /**
- * Class AeopStorePromProduct
+ * 活动商品对象列表
+ * @author auto create
  */
 class AeopStorePromProduct
 {
@@ -19,7 +20,7 @@ class AeopStorePromProduct
 	/** 
 	 * 商品id
 	 **/
-	public int $product_id;
+	public $product_id;
 	
 	/** 
 	 * 商品sku信息
@@ -31,3 +32,4 @@ class AeopStorePromProduct
 	 **/
 	public $used_warehouse;	
 }
+?>

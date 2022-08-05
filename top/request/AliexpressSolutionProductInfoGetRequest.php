@@ -1,49 +1,47 @@
 <?php
-
 /**
- * Class AliexpressSolutionProductInfoGetRequest
+ * TOP API: aliexpress.solution.product.info.get request
+ * 
+ * @author auto create
+ * @since 1.0, 2022.07.05
  */
 class AliexpressSolutionProductInfoGetRequest
 {
+	/** 
+	 * product ID
+	 **/
+	private $productId;
+	
+	private $apiParas = array();
+	
+	public function setProductId($productId)
+	{
+		$this->productId = $productId;
+		$this->apiParas["product_id"] = $productId;
+	}
 
-    private $productId;
+	public function getProductId()
+	{
+		return $this->productId;
+	}
 
-    private $apiParas = [];
-
-    public function getProductId()
-    {
-        return $this->productId;
-    }
-
-    public function setProductId($productId)
-    {
-        $this->productId = $productId;
-        $this->apiParas["product_id"] = $productId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getApiMethodName(): string
-    {
-        return "aliexpress.solution.product.info.get";
-    }
-
-    /**
-     * @return array
-     */
-    public function getApiParas(): array
-    {
-        return $this->apiParas;
-    }
-
-    public function check()
-    {
-    }
-
-    public function putOtherTextParam($key, $value)
-    {
-        $this->apiParas[$key] = $value;
-        $this->$key = $value;
-    }
+	public function getApiMethodName()
+	{
+		return "aliexpress.solution.product.info.get";
+	}
+	
+	public function getApiParas()
+	{
+		return $this->apiParas;
+	}
+	
+	public function check()
+	{
+		
+	}
+	
+	public function putOtherTextParam($key, $value) {
+		$this->apiParas[$key] = $value;
+		$this->$key = $value;
+	}
 }

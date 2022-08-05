@@ -53,6 +53,11 @@ class GlobalAeopTpAddressDto
 	public $fax_number;
 	
 	/** 
+	 * localized address, currently only used in Russia
+	 **/
+	public $localized_address;
+	
+	/** 
 	 * mobile phone number
 	 **/
 	public $mobile_no;

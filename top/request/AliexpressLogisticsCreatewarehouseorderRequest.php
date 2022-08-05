@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.createwarehouseorder request
  * 
  * @author auto create
- * @since 1.0, 2020.09.17
+ * @since 1.0, 2022.03.09
  */
 class AliexpressLogisticsCreatewarehouseorderRequest
 {
@@ -41,6 +41,11 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	 * 发票号（可空）
 	 **/
 	private $invoiceNumber;
+	
+	/** 
+	 * 是否同意升级逆向高货值保险
+	 **/
+	private $isAgreeUpgradeReverseParcelInsure;
 	
 	/** 
 	 * 包裹数量： 创建国家小包订单时非必填，创建国家快递订单时必填
@@ -149,6 +154,17 @@ class AliexpressLogisticsCreatewarehouseorderRequest
 	public function getInvoiceNumber()
 	{
 		return $this->invoiceNumber;
+	}
+
+	public function setIsAgreeUpgradeReverseParcelInsure($isAgreeUpgradeReverseParcelInsure)
+	{
+		$this->isAgreeUpgradeReverseParcelInsure = $isAgreeUpgradeReverseParcelInsure;
+		$this->apiParas["is_agree_upgrade_reverse_parcel_insure"] = $isAgreeUpgradeReverseParcelInsure;
+	}
+
+	public function getIsAgreeUpgradeReverseParcelInsure()
+	{
+		return $this->isAgreeUpgradeReverseParcelInsure;
 	}
 
 	public function setPackageNum($packageNum)

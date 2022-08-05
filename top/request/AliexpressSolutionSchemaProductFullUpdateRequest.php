@@ -3,10 +3,15 @@
  * TOP API: aliexpress.solution.schema.product.full.update request
  * 
  * @author auto create
- * @since 1.0, 2019.07.10
+ * @since 1.0, 2022.01.10
  */
 class AliexpressSolutionSchemaProductFullUpdateRequest
 {
+	/** 
+	 * More information of the request.
+	 **/
+	private $developerFeatures;
+	
 	/** 
 	 * Product full update request. To learn how to generate the content, please refer to https://developers.aliexpress.com/en/doc.htm?docId=109760&docType=1.  Be aware that the aliexpress_product_id field should be replaced by the product ID belonged to the seller.
 	 **/
@@ -14,6 +19,17 @@ class AliexpressSolutionSchemaProductFullUpdateRequest
 	
 	private $apiParas = array();
 	
+	public function setDeveloperFeatures($developerFeatures)
+	{
+		$this->developerFeatures = $developerFeatures;
+		$this->apiParas["developer_features"] = $developerFeatures;
+	}
+
+	public function getDeveloperFeatures()
+	{
+		return $this->developerFeatures;
+	}
+
 	public function setSchemaFullUpdateRequest($schemaFullUpdateRequest)
 	{
 		$this->schemaFullUpdateRequest = $schemaFullUpdateRequest;

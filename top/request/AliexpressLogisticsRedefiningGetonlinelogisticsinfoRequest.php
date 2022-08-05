@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.redefining.getonlinelogisticsinfo request
  * 
  * @author auto create
- * @since 1.0, 2020.07.01
+ * @since 1.0, 2022.06.13
  */
 class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 {
@@ -33,7 +33,12 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 	private $internationalLogisticsId;
 	
 	/** 
-	 * logistics order id
+	 * lpNumber(物流单LP号)
+	 **/
+	private $logisticsOrderCode;
+	
+	/** 
+	 * logistics order id(物流单ID)
 	 **/
 	private $logisticsOrderId;
 	
@@ -112,6 +117,17 @@ class AliexpressLogisticsRedefiningGetonlinelogisticsinfoRequest
 	public function getInternationalLogisticsId()
 	{
 		return $this->internationalLogisticsId;
+	}
+
+	public function setLogisticsOrderCode($logisticsOrderCode)
+	{
+		$this->logisticsOrderCode = $logisticsOrderCode;
+		$this->apiParas["logistics_order_code"] = $logisticsOrderCode;
+	}
+
+	public function getLogisticsOrderCode()
+	{
+		return $this->logisticsOrderCode;
 	}
 
 	public function setLogisticsOrderId($logisticsOrderId)

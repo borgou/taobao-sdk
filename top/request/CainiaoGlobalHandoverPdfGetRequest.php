@@ -3,7 +3,7 @@
  * TOP API: cainiao.global.handover.pdf.get request
  * 
  * @author auto create
- * @since 1.0, 2020.07.01
+ * @since 1.0, 2021.11.24
  */
 class CainiaoGlobalHandoverPdfGetRequest
 {

@@ -18,6 +18,11 @@ class AeopLogisticsOrderDetailDto
 	public $channel_code;
 	
 	/** 
+	 * 物流单超时关单时间（1.从物流单创建时间起，30天内可以查询到该字段； 2. 仅支持4PL线上创建的物流单查询超时关单时间）
+	 **/
+	public $close_time;
+	
+	/** 
 	 * gmtCreate
 	 **/
 	public $gmt_create;

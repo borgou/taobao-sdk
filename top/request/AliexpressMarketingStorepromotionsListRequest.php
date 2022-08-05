@@ -1,13 +1,18 @@
 <?php
-
 /**
- * Class AliexpressMarketingStorePromotionsListRequest
+ * TOP API: aliexpress.marketing.storepromotions.list request
+ * 
+ * @author auto create
+ * @since 1.0, 2019.07.08
  */
-class AliexpressMarketingStorePromotionsListRequest
+class AliexpressMarketingStorepromotionsListRequest
 {
+	/** 
+	 * 查询参数
+	 **/
 	private $promotionQueryDto;
 	
-	private array $apiParas = [];
+	private $apiParas = array();
 	
 	public function setPromotionQueryDto($promotionQueryDto)
 	{
@@ -20,16 +25,13 @@ class AliexpressMarketingStorePromotionsListRequest
 		return $this->promotionQueryDto;
 	}
 
-    /**
-     * @return string
-     */
-	public function getApiMethodName(): string
-    {
+	public function getApiMethodName()
+	{
 		return "aliexpress.marketing.storepromotions.list";
 	}
 	
-	public function getApiParas(): array
-    {
+	public function getApiParas()
+	{
 		return $this->apiParas;
 	}
 	

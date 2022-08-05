@@ -8,6 +8,11 @@ class AeopTpOrderProductInfoDto
 {
 	
 	/** 
+	 * 类目id
+	 **/
+	public $category_id;
+	
+	/** 
 	 * 商品ID
 	 **/
 	public $product_id;

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * 12345
+ * refundSellerAddressList
  * @author auto create
  */
 class Refundselleraddresslist

@@ -3,7 +3,7 @@
  * TOP API: aliexpress.logistics.item.forbidattribute.query request
  * 
  * @author auto create
- * @since 1.0, 2020.09.25
+ * @since 1.0, 2022.06.20
  */
 class AliexpressLogisticsItemForbidattributeQueryRequest
 {

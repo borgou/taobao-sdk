@@ -30,7 +30,7 @@
 
 		function report($session)
 		{
-			$request = new TopSdkFeedbackUploadRequest();
+			$request = new TopSdkFeedbackUploadRequest;
 		}
 
 		function setCacheClient($cache)

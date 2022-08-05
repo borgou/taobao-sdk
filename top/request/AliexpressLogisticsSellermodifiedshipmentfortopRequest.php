@@ -3,14 +3,24 @@
  * TOP API: aliexpress.logistics.sellermodifiedshipmentfortop request
  * 
  * @author auto create
- * @since 1.0, 2020.05.27
+ * @since 1.0, 2022.01.04
  */
 class AliexpressLogisticsSellermodifiedshipmentfortopRequest
 {
 	/** 
+	 * 实际承运商
+	 **/
+	private $actualCarrier;
+	
+	/** 
 	 * memo
 	 **/
 	private $description;
+	
+	/** 
+	 * 多语言，ae_ES西班牙语，pt_BR巴西
+	 **/
+	private $locale;
 	
 	/** 
 	 * 新的运单号
@@ -54,6 +64,17 @@ class AliexpressLogisticsSellermodifiedshipmentfortopRequest
 	
 	private $apiParas = array();
 	
+	public function setActualCarrier($actualCarrier)
+	{
+		$this->actualCarrier = $actualCarrier;
+		$this->apiParas["actual_carrier"] = $actualCarrier;
+	}
+
+	public function getActualCarrier()
+	{
+		return $this->actualCarrier;
+	}
+
 	public function setDescription($description)
 	{
 		$this->description = $description;
@@ -63,6 +84,17 @@ class AliexpressLogisticsSellermodifiedshipmentfortopRequest
 	public function getDescription()
 	{
 		return $this->description;
+	}
+
+	public function setLocale($locale)
+	{
+		$this->locale = $locale;
+		$this->apiParas["locale"] = $locale;
+	}
+
+	public function getLocale()
+	{
+		return $this->locale;
 	}
 
 	public function setNewLogisticsNo($newLogisticsNo)

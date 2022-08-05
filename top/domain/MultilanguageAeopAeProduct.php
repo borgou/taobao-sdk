@@ -83,7 +83,7 @@ class MultilanguageAeopAeProduct
 	public $detail;
 	
 	/** 
-	 * 运费模版ID。通过运费接口listFreightTemplate获取。
+	 * 商品关联的运费模板ID
 	 **/
 	public $freight_template_id;
 	

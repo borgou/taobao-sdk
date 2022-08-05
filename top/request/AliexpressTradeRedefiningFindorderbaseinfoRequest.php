@@ -3,7 +3,7 @@
  * TOP API: aliexpress.trade.redefining.findorderbaseinfo request
  * 
  * @author auto create
- * @since 1.0, 2019.11.18
+ * @since 1.0, 2021.06.04
  */
 class AliexpressTradeRedefiningFindorderbaseinfoRequest
 {
