@@ -1,6 +1,6 @@
 {
     "name": "borgou/taobao-sdk",
-    "description": "TaoBao-sdk-PHP-auto_1447355351010-20151124",
+    "description": "TaoBao-sdk-PHP-20180326",
     "keywords": ["taobao", "api", "top", "sdk"],
     "authors": [
         {
@@ -13,6 +13,9 @@
     "require": {
         "php": ">= 5.2.0",
         "ext-curl": "*"
+    },
+    "suggest": {
+        "ext-yac": "*"
     },
     "autoload": {
         "files": [
